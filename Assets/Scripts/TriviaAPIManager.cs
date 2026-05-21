@@ -1,25 +1,6 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
-
-[Serializable]
-public class TriviaQuestion
-{
-    public string type;
-    public string difficulty;
-    public string category;
-    public string question;
-    public string correct_answer;
-    public string[] incorrect_answers;
-}
-
-[Serializable]
-public class TriviaResponse
-{
-    public int response_code;
-    public TriviaQuestion[] results;
-}
 
 public class TriviaAPIManager : MonoBehaviour
 {
@@ -53,9 +34,9 @@ public class TriviaAPIManager : MonoBehaviour
 
             Debug.Log("Preguntas recibidas: " + datos.results.Length);
             Debug.Log("Categoría: "          + datos.results[0].category);
-            Debug.Log("Dificultade: "         + datos.results[0].difficulty);
+            Debug.Log("Dificultad: "         + datos.results[0].difficulty);
             Debug.Log("Pregunta: "           + datos.results[0].question);
-            Debug.Log("Resposta correcta: " + datos.results[0].correct_answer);
+            Debug.Log("Respuesta correcta: " + datos.results[0].correct_answer);
         }
     }
 }
